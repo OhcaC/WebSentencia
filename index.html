@@ -34,13 +34,25 @@
             background-color: #38343c;
             margin: 0;
             padding: 0;
+            margin-bottom: 70px;
         }
 
-        .header {
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 20px; /* Ajusta el margen superior */
-        }
+        .header-container {
+    text-align: center;
+    margin-top: 20px; /* Ajusta el margen superior */
+}
+
+.header {
+    display: inline-block;
+    background-color: #47434a; /* Cambia el color de fondo */
+    border-radius: 10px; /* Añade bordes redondeados */
+    padding: 20px; /* Añade espacio interno */
+    max-width: 600px; /* Ancho máximo */
+    width: 100%; /* Ancho completo */
+    margin: 0 auto; /* Centra horizontalmente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave por defecto */
+}
+
 
         .header h1, .section-heading {
             color: #fff;
@@ -51,39 +63,47 @@
         }
 
         .header h2 {
-            color: #fff;
-            font-size: 20px;
-            margin: 5px 0;
-            font-weight: normal;
-            font-family: 'Sofia Sans Semi Condensed', sans-serif; /* Cambiar la fuente */
-        }
+    color: #fff;
+    font-size: 20px;
+    margin: 5px 0;
+    font-weight: normal;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /* Cambiar la fuente */
+}
 
-        .logo-container {
-            display: inline-block;
-            position: relative;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            animation: moveUpDown 4s ease-in-out infinite alternate;
-            border: 6px solid #47434a; /* Cambia el color del borde y ajusta el grosor */
-        }
+.logo-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px; /* Ajusta el margen inferior */
+    animation: moveUpDown 3s ease-in-out infinite alternate; /* Agrega la animación al contenedor */
+    border: 6px solid #2e2b31; /* Agrega un borde de 6px de grosor y color negro */
+}
 
-        .logo-container img {
-            width: 100%; /* Ajusta el tamaño de la imagen para que ocupe todo el contenedor */
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+.logo-container img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section-heading {
+    color: #fff;
+    font-size: 36px;
+    margin: 10px 0;
+    font-weight: bold;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif; /* Cambiar la fuente */
+}
+
 
         @keyframes moveUpDown {
             0% {
-                transform: translateY(0);
+                transform: translateY(20px);
             }
             100% {
-                transform: translateY(-20px);
+                transform: translateY(-10px);
             }
         }
 
@@ -91,7 +111,7 @@
             background-color: #2e2b31;
             padding: 20px;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 0px;
         }
 
         .content h1 {
@@ -240,6 +260,39 @@
             margin-right: 10px;
             margin-left: 10px;
         }
+
+        
+    .watermark {
+        position: fixed; /* Fijar la marca de agua */
+        bottom: 20px; /* Espacio desde abajo */
+        left: 50%; /* Centrar horizontalmente */
+        transform: translateX(-50%); /* Centrar horizontalmente */
+        color: rgba(255, 255, 255, 0.5); /* Color de la marca de agua */
+        font-size: 14px; /* Tamaño de fuente */
+        background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con transparencia */
+        padding: 10px 20px; /* Espaciado interno */
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    .wave {
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: url(./imagenes/wave.png);
+        background-size: 1000px 100px;
+        animation: wave 5s linear infinite;
+        margin-bottom: 0%;
+    }
+
+    @keyframes wave {
+        0%{
+            background-position-x: 0;
+        }
+        100%{
+            background-position-x: 1000px;
+        }
+    }
+
     </style>
 </head>
 <body>
@@ -248,16 +301,24 @@
         <div class="top-bar"></div>
     </div>
 
-    <div class="header">
-        <div class="logo-container">
-            <img src="./imagenes/sentencia.png" alt="Logo">
+    <div class="header-container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="./imagenes/sentencia.png" alt="Logo" class="logo">
+            </div>
+            <h1 class="section-heading">SENTENCIA</h1>
+            <h2>Gremio Español de Albion Online</h2>
         </div>
-        <h1 class="section-heading">SENTENCIA</h1>
-        <h2>Gremio Español de Albion Online</h2>
     </div>
+    
+
+    <div class="wave"></div>
+
 
     <div class="content">
+           <div class="section-box">
         <h1 class="section-heading">CONTENIDOS</h1>
+           </div>
         <div class="content-container">
             <div class="content-item">
                 <img src="./imagenes/ZvZ.jpg" alt="ZvZ">
@@ -275,7 +336,9 @@
     </div>
 
     <div class="requirements-section" class="section-heading">
-        <h1 class="section-heading">REQUESITOS</h1>
+        <div class="section-box">
+         <h1 class="section-heading">REQUESITOS</h1>
+        </div>
         <div class="requirements-box">
             <ul class="requirements-list">
                 <li>Ganas de aprender</li>
@@ -288,7 +351,9 @@
     </div>
 
     <div class="contact-section">
-        <h1 class="section-heading">CONTÁCTANOS</h1>
+        <div class="section-box">
+         <h1 class="section-heading">CONTÁCTANOS</h1>
+        </div>
         <div class="contact-container">
 
             <a href="https://discord.gg/WRujYnYv46" style="text-decoration: none;">
@@ -324,6 +389,10 @@
             </a>
 
         </div>
+    </div>
+
+    <div class="watermark">
+        Sentencia 2024 - Gremio Español de Albion Online. Pagina creada por Ohca
     </div>
 
     <script>
